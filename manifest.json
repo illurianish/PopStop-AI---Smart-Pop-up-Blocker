@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "PopStop AI",
+  "version": "2.0.0",
+  "description": "AI-powered universal pop-up blocker with advanced threat detection. Works on all sites including adult sites.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "declarativeNetRequest",
+    "webRequest",
+    "storage",
+    "activeTab",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PopStop - Block Pop-ups",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ad_blocking_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+} 

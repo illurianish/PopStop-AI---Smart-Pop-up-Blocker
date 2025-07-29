@@ -1,0 +1,25 @@
+# Chrome Extension Generated Files
+_metadata/
+*.crx
+*.pem
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Development Files
+.vscode/
+.idea/
+*.log
+node_modules/
+npm-debug.log*
+
+# Temporary Files
+*.tmp
+*.temp
+*~ 
